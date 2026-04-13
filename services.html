@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Express Trackers</title>
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .page-header {
+            background: var(--accent-gradient);
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .breadcrumb {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            width: 100px;
+            height: 100px;
+            background: var(--bg-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid var(--secondary);
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .features-strip {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .feature-item h4 { color: white; margin-bottom: 0.5rem; }
+        .feature-item p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Header injected by JS -->
+
+    <div class="page-header">
+        <div class="container reveal fade-up">
+            <h1>Logistics Solutions</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &raquo; Services
+            </div>
+            <p style="max-width: 600px; margin: 1.5rem auto 0; font-size: 1.2rem; color: rgba(255,255,255,0.9);">We provide end-to-end modern logistics and transportation services tailored to your needs.</p>
+        </div>
+    </div>
+
+    <!-- Detailed Services Grid -->
+    <section class="section">
+        <div class="container grid grid-2">
+            
+            <div class="card hover-lift reveal fade-up delay-100">
+                <div class="service-icon">✈️</div>
+                <h2>Air Freight</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">The fastest way to move your valuable cargo globally. Our air freight services offer prioritize handling, express customs clearance, and guaranteed space on premium airlines.</p>
+                <a href="service-detail.html?service=air" class="btn btn-outline" style="width: 100%;">View Details</a>
+            </div>
+
+            <div class="card hover-lift reveal fade-up delay-200">
+                <div class="service-icon">🚆</div>
+                <h2>Rail Transport</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Efficient, eco-friendly, and highly secure bulk container transport. Ideal for large shipments over long distances linking domestic markets reliably.</p>
+                <a href="service-detail.html?service=rail" class="btn btn-outline" style="width: 100%;">View Details</a>
+            </div>
+
+            <div class="card hover-lift reveal fade-up delay-300">
+                <div class="service-icon">🚚</div>
+                <h2>Road Transportation</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Utilizing a modern fleet of GPS-enabled trucks and vans, we provide highly flexible FTL (Full Truckload) and LTL (Less Than Truckload) door-to-door services.</p>
+                <a href="service-detail.html?service=road" class="btn btn-outline" style="width: 100%;">View Details</a>
+            </div>
+
+            <div class="card hover-lift reveal fade-up delay-400">
+                <div class="service-icon">📦</div>
+                <h2>Courier & Cargo</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Fast document and small parcel delivery. Both domestic and international networks ensuring next-day deliveries in key corporate zones.</p>
+                <a href="service-detail.html?service=courier" class="btn btn-outline" style="width: 100%;">View Details</a>
+            </div>
+
+            <div class="card hover-lift reveal fade-up delay-100">
+                <div class="service-icon">🛡️</div>
+                <h2>Custom Clearance</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Navigating complex international trade laws. Our experts handle documentation, duties, and taxes to prevent border delays.</p>
+                <a href="service-detail.html?service=customs" class="btn btn-outline" style="width: 100%;">View Details</a>
+            </div>
+
+            <div class="card hover-lift reveal fade-up delay-200">
+                <div class="service-icon">🏭</div>
+                <h2>Warehousing</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Flexible storage solutions in state-of-the-art facilities equipped with comprehensive inventory tracking and climate control options.</p>
+                <a href="service-detail.html?service=warehousing" class="btn btn-outline" style="width: 100%;">View Details</a>
+            </div>
+
+            <div class="card hover-lift reveal fade-up delay-300">
+                <div class="service-icon">⚓</div>
+                <h2>Marine Cargo Insurance</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Total peace of mind. Comprehensive coverage protecting your high-value shipments against physical loss or damage during transit.</p>
+                <a href="service-detail.html?service=insurance" class="btn btn-outline" style="width: 100%;">View Details</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Extra Features Strip -->
+    <div class="features-strip reveal fade-up">
+        <div class="container grid grid-3">
+            <div class="feature-item">
+                <div style="font-size: 2rem; margin-bottom: 10px;">⚡</div>
+                <h4>Fast Delivery</h4>
+                <p>Committed turnaround times.</p>
+            </div>
+            <div class="feature-item">
+                <div style="font-size: 2rem; margin-bottom: 10px;">📱</div>
+                <h4>Web & SMS Tracking</h4>
+                <p>24/7 visibility on all orders.</p>
+            </div>
+            <div class="feature-item">
+                <div style="font-size: 2rem; margin-bottom: 10px;">💰</div>
+                <h4>Affordable Pricing</h4>
+                <p>Transparent rates. No hidden fees.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="section text-center">
+        <div class="container reveal fade-up">
+            <h2 class="section-title">Ready to Optimize Your Logistics?</h2>
+            <p style="margin-bottom: 2rem; color: var(--text-muted);">Reach out to our experts to configure a logistical plan completely tailored to your business profile.</p>
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="components/nav-footer.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

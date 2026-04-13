@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | Express Trackers</title>
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .page-header {
+            background: var(--accent-gradient);
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: capitalize;
+        }
+        .breadcrumb {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+        
+        .detail-content {
+            margin-top: -40px;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-hover);
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .key-benefits li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+        .key-benefits li::before {
+            content: '✓';
+            color: var(--white);
+            background: var(--primary);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .sidebar-card {
+            background: var(--bg-color);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+        
+        @media (max-width: 992px) {
+            .detail-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header injected by JS -->
+
+    <div class="page-header">
+        <div class="container reveal fade-up">
+            <h1 id="serviceTitle">Premium Logistics Service</h1>
+            <div class="breadcrumb" id="breadcrumbText">
+                <a href="index.html">Home</a> &raquo; <a href="services.html">Services</a> &raquo; Detail
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail Content -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="detail-content reveal fade-up delay-100">
+                <div class="main-content">
+                    <img src="assets/hero_air.png" id="serviceImg" alt="Service Image" style="width: 100%; border-radius: var(--radius-md); margin-bottom: 2rem;">
+                    
+                    <h2 class="section-title">Comprehensive Service Overview</h2>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;" id="serviceDesc">
+                        Leveraging our extensive logistics network and modern infrastructure, we provide an unparalleled transportation solution designed to meet complex corporate requirements securely and affordably.
+                    </p>
+                    
+                    <div style="margin: 3rem 0;">
+                        <h3 style="color: var(--primary);">Key Benefits</h3>
+                        <ul class="key-benefits" style="margin-top: 1rem;">
+                            <li>Fastest transit times in the industry</li>
+                            <li>Real-time tracking and constant visibility</li>
+                            <li>Zero compromise on security and specialized handling</li>
+                            <li>Cost-effective routes tailored to your budget</li>
+                        </ul>
+                    </div>
+
+                    <h3 style="color: var(--primary);">The Process</h3>
+                    <p style="margin-top: 1rem; color: var(--text-muted);">From the moment you request a quote, our team takes over. We identify the most optimal routing, complete all necessary paperwork, and monitor your cargo exactly until it reaches its final destination seamlessly.</p>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Need this Service?</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Speak directly to our operations manager to get a custom route plan and instant quote.</p>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Get A Quote</a>
+                        <a href="tel:+12345678900" class="btn btn-outline" style="width: 100%;">Call Us Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="components/nav-footer.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Simple script to make page dynamic based on URL params
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const service = params.get('service');
+            const titleEl = document.getElementById('serviceTitle');
+            const breadEl = document.getElementById('breadcrumbText');
+            const imgEl = document.getElementById('serviceImg');
+            
+            if(service) {
+                const sName = service.replace('-', ' ');
+                titleEl.innerText = sName;
+                breadEl.innerHTML = `<a href="index.html">Home</a> &raquo; <a href="services.html">Services</a> &raquo; ${sName}`;
+                
+                // Map images roughly
+                if(service.includes('rail')) imgEl.src = 'assets/hero_rail.png';
+                else if(service.includes('road')) imgEl.src = 'assets/hero_surface.png';
+                else if(service.includes('warehouse')) imgEl.src = 'assets/service_warehouse.png';
+            }
+        });
+    </script>
+</body>
+</html>

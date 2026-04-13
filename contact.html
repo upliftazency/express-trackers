@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Express Trackers</title>
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .page-header {
+            background: var(--accent-gradient);
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-grid {
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact-info {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-form-box {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--white);
+            background: var(--primary);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #e0e0e0;
+            margin-top: 4rem;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header injected by JS -->
+
+    <div class="page-header">
+        <div class="container reveal fade-up">
+            <h1>Get In Touch</h1>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-top: 1rem;">We are available 24/7 to solve your logistics challenges.</p>
+        </div>
+    </div>
+
+    <!-- Contact Grid -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container grid grid-2 contact-grid">
+            
+            <!-- Contact Info -->
+            <div class="contact-info reveal slide-in-left">
+                <h2 style="margin-bottom: 2rem; color: var(--primary);">Contact Information</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Corporate Headquarters</h4>
+                        <p style="color: var(--text-muted);">123 Logistics Way, Suite 400<br>Global City, GC 10001, USA</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Phone</h4>
+                        <p style="color: var(--text-muted);">Toll-Free: +1 800 234 5678<br>Local: +1 234 567 8900</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Email Address</h4>
+                        <p style="color: var(--text-muted);">info@expresstrackers.com<br>support@expresstrackers.com</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee;">
+                    <h4 style="margin-bottom: 1rem;">Global Support Hours</h4>
+                    <p style="color: var(--text-muted);">Monday - Saturday: 24 Hours<br>Sunday: Emergency Only</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-box reveal slide-in-right">
+                <h2 style="margin-bottom: 2rem; color: var(--primary);">Send Us a Message</h2>
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent Successfully!');">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="grid grid-2" style="gap: 1rem;">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="john@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+1 234 5678">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Interested Service</label>
+                        <select id="service" class="form-control" style="appearance: none;">
+                            <option value="">Select a service...</option>
+                            <option value="air">Air Freight</option>
+                            <option value="rail">Rail Transport</option>
+                            <option value="road">Road Transport</option>
+                            <option value="warehousing">Warehousing</option>
+                            <option value="other">Other / Support</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" placeholder="Tell us about your logistical needs..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Google Map Placeholder -->
+        <div class="container reveal fade-up">
+            <div class="map-placeholder">
+                Interactive Google Map Placeholder
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="components/nav-footer.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
