@@ -100,7 +100,7 @@
                     
                     <div style="margin: 3rem 0;">
                         <h3 style="color: var(--primary);">Key Benefits</h3>
-                        <ul class="key-benefits" style="margin-top: 1rem;">
+                        <ul class="key-benefits" style="margin-top: 1rem;" id="serviceBenefits">
                             <li>Fastest transit times in the industry</li>
                             <li>Real-time tracking and constant visibility</li>
                             <li>Zero compromise on security and specialized handling</li>
@@ -109,14 +109,14 @@
                     </div>
 
                     <h3 style="color: var(--primary);">The Process</h3>
-                    <p style="margin-top: 1rem; color: var(--text-muted);">From the moment you request a quote, our team takes over. We identify the most optimal routing, complete all necessary paperwork, and monitor your cargo exactly until it reaches its final destination seamlessly.</p>
+                    <p style="margin-top: 1rem; color: var(--text-muted);" id="serviceProcess">From the moment you request a quote, our team takes over. We identify the most optimal routing, complete all necessary paperwork, and monitor your cargo exactly until it reaches its final destination seamlessly.</p>
                 </div>
                 
                 <div class="sidebar">
                     <div class="sidebar-card">
                         <h3 style="color: var(--primary); margin-bottom: 1rem;">Need this Service?</h3>
                         <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Speak directly to our operations manager to get a custom route plan and instant quote.</p>
-                        <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Get A Quote</a>
+                        <a href="contact.html" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Contact Us</a>
                         <a href="tel:+12345678900" class="btn btn-outline" style="width: 100%;">Call Us Now</a>
                     </div>
                 </div>
@@ -129,23 +129,122 @@
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
     <script>
-        // Simple script to make page dynamic based on URL params
+        const serviceData = {
+            'ocean': {
+                name: 'Ocean Freight',
+                desc: 'Express Trackers partners with leading ocean carriers to ensure your materials are delivered swiftly and efficiently across the globe. We excel in managing conventional cargo with total professionalism, providing you with powerful, customized maritime solutions.',
+                benefits: [
+                    'Established partnerships with premier ocean carriers',
+                    'Customized global shipping and routing solutions',
+                    'Expertise in handling all conventional and bulk cargos',
+                    'Focus on cost-efficiency and supply chain reliability'
+                ],
+                process: 'We meticulously coordinate your marine shipment from inland transport to the shipping port, managing customs and port documentation to drastically reduce delays.'
+            },
+            'air': {
+                name: 'Air Freight',
+                desc: 'We are specialized experts in international air freight, engineered to move your cargo with unmatched speed and safety. We carefully match your unique requirements with the most cost-effective and secure air transit approaches internationally.',
+                benefits: [
+                    'Unbeatable transit speeds for international cargo',
+                    'Highly cost-effective global operational approaches',
+                    'Dedicated experts focused on cargo safety',
+                    'Personalized customer support to match your exact demands'
+                ],
+                process: 'Upon receiving your request, we identify the strongest airline routing, arrange airport drop-offs, and clear express customs to keep the supply chain flowing without pause.'
+            },
+            'customs': {
+                name: 'Custom Clearance',
+                desc: 'Navigating international trade laws shouldn’t slow you down. Our automated custom clearance services make your business simpler and better, ensuring your goods are cleared quickly and coordinate perfectly for their onward delivery.',
+                benefits: [
+                    'Automated clearance processes for faster turnaround',
+                    'Expert compliance and documentation handling',
+                    'Perfect coordination for immediate post-clearance delivery',
+                    'Cost-effective management of regulatory hurdles'
+                ],
+                process: 'Our customs brokers prepare your digital paperwork proactively, engaging directly with border officials to clear your goods before any holding fees accumulate.'
+            },
+            'courier': {
+                name: 'Courier & Cargo',
+                desc: 'With Express Trackers, shipping worldwide is as intuitive as shipping locally. We guarantee your crucial business documents and packages enjoy the fastest available transit times and the most reliable service to virtually any global destination.',
+                benefits: [
+                    'Fastest transit times domestically within India',
+                    'Seamless international package and document delivery',
+                    'Highly reliable tracking and handling procedures',
+                    'Perfect for SMBs requiring daily efficient shipping'
+                ],
+                process: 'Leveraging our rapid sorting centers, your parcels are expedited directly to the final delivery hub while tracking data streams to you in real time.'
+            },
+            'road': {
+                name: 'Road Transportation',
+                desc: 'Powered by our dedicated <strong style="color: var(--primary);">Dhruv Transport</strong> division, we offer efficient, professional, and highly competitive transport services utilizing our own fleet vehicles. We promise a completely personalized door-to-door solution for all your road transportation requirements.',
+                benefits: [
+                    'Dedicated fleet managed by the <strong style="color: var(--primary);">Dhruv Transport</strong> division',
+                    'Vast array of specialized vehicles for varied requirements',
+                    'Completely personalized door-to-door service',
+                    'Deep domain experience ensuring competitive pricing'
+                ],
+                process: 'Our fleet is dynamically dispatched. GPS tracking keeps the truck on route while ensuring door-to-door pick-up and drop-off occurs cleanly within your designated timeframe.'
+            },
+            'warehousing': {
+                name: 'Warehousing',
+                desc: 'Our expansive warehousing services provide secure, climate-controlled storage alongside advanced inventory management. By utilizing cross-docking and efficient order fulfillment, we drastically minimize your storage time, bringing you safe and economical transport logistics.',
+                benefits: [
+                    'Secure and climate-controlled storage environments',
+                    'Advanced inventory tracking and order fulfillment',
+                    'Strategic cross-docking services to minimize storage limits',
+                    'Economical approach linking storage directly to transport'
+                ],
+                process: 'Your inventory is scanned immediately upon intake, securely stored or cross-docked, and monitored via advanced systems until it is requested for final delivery out.'
+            },
+            'insurance': {
+                name: 'Marine Cargo Insurance',
+                desc: 'We offer complete, dependable marine cargo insurance guidance tailored specifically to maximize your profit and mitigate risk. We help insulate your business against unpredictable transit damages keeping your budget and bottom line strictly in mind.',
+                benefits: [
+                    'Complete shipment protection against transit damages',
+                    'Expert consultation tailored to your budget constraints',
+                    'Coverage strategies optimized for maximum client profit',
+                    'Total peace of mind for high-value seaborne cargo'
+                ],
+                process: 'An insurance specialist reviews your cargo profile, evaluates potential transit hazards, and drafts a custom protection policy immediately before the cargo initiates transit.'
+            }
+        };
+
         document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams(window.location.search);
-            const service = params.get('service');
+            const serviceKey = params.get('service');
+            
             const titleEl = document.getElementById('serviceTitle');
             const breadEl = document.getElementById('breadcrumbText');
             const imgEl = document.getElementById('serviceImg');
+            const descEl = document.getElementById('serviceDesc');
+            const benefitsEl = document.getElementById('serviceBenefits');
+            const processEl = document.getElementById('serviceProcess');
             
-            if(service) {
-                const sName = service.replace('-', ' ');
-                titleEl.innerText = sName;
-                breadEl.innerHTML = `<a href="index.html">Home</a> &raquo; <a href="services.html">Services</a> &raquo; ${sName}`;
+            if(serviceKey && serviceData[serviceKey]) {
+                const data = serviceData[serviceKey];
+                
+                titleEl.innerText = data.name;
+                breadEl.innerHTML = `<a href="index.html">Home</a> &raquo; <a href="services.html">Services</a> &raquo; ${data.name}`;
+                descEl.innerHTML = data.desc;
+                
+                if (benefitsEl) {
+                    benefitsEl.innerHTML = data.benefits.map(b => `<li>${b}</li>`).join('');
+                }
+                if (processEl) {
+                    processEl.innerText = data.process;
+                }
                 
                 // Map images roughly
-                if(service.includes('rail')) imgEl.src = 'assets/hero_rail.png';
-                else if(service.includes('road')) imgEl.src = 'assets/hero_surface.png';
-                else if(service.includes('warehouse')) imgEl.src = 'assets/service_warehouse.png';
+                if(serviceKey.includes('rail')) imgEl.src = 'assets/hero_rail.png';
+                else if(serviceKey.includes('road')) imgEl.src = 'assets/hero_surface.png';
+                else if(serviceKey.includes('warehouse')) imgEl.src = 'assets/service_warehouse.png';
+                else if(serviceKey.includes('ocean')) imgEl.src = 'assets/hero_ocean.png';
+                else imgEl.src = 'assets/hero_air.png'; // default fallback
+            } else if (serviceKey) {
+                // Fallback for missing keys
+                const sName = serviceKey.replace('-', ' ');
+                titleEl.innerText = sName;
+                breadEl.innerHTML = `<a href="index.html">Home</a> &raquo; <a href="services.html">Services</a> &raquo; ${sName}`;
             }
         });
     </script>

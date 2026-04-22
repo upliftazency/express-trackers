@@ -154,12 +154,19 @@ img {
   padding: var(--spacing-lg);
   box-shadow: var(--shadow-soft);
   transition: var(--transition);
-  height: max-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
+}
+
+.card > a:last-child,
+.card > .btn:last-child {
+  margin-top: auto;
 }
 
 /* Form Elements */
@@ -235,6 +242,12 @@ header {
   color: var(--primary);
 }
 
+.nav-links .btn {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  color: var(--white) !important;
+}
+
 .mobile-menu-btn {
   display: none;
   font-size: 1.5rem;
@@ -251,8 +264,8 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -288,39 +301,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Navigation tweaks for dark hero sections */
-body.home-page header:not(.scrolled) {
-  background: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
-}
-body.home-page header:not(.scrolled) .nav-links a:not(.btn) {
-  color: var(--white) !important;
-}
-body.home-page header:not(.scrolled) .logo {
-  color: var(--white) !important;
-}
-body.home-page header:not(.scrolled) .mobile-menu-btn {
-  color: var(--white) !important;
-}
 
-/* Explicitly enforce scrolled state */
-header.scrolled {
-  background-color: var(--white) !important;
-  box-shadow: var(--shadow-soft) !important;
-}
-body.home-page header.scrolled .nav-links a:not(.btn) {
-  color: var(--text-dark) !important;
-}
-body.home-page header.scrolled .nav-links a:not(.btn):hover {
-  color: var(--primary) !important;
-}
-body.home-page header.scrolled .logo {
-  color: var(--primary) !important;
-}
-body.home-page header.scrolled .mobile-menu-btn {
-  color: var(--primary) !important;
-}
 
 /* Responsive */
 @media (max-width: 992px) {

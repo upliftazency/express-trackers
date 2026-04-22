@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,31 +14,35 @@
             text-align: center;
             color: var(--white);
         }
+
         .page-header h1 {
             color: var(--white);
             font-size: 3.5rem;
             margin-bottom: 1rem;
         }
+
         .breadcrumb {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 1rem;
         }
+
         .breadcrumb a {
             color: var(--white);
             text-decoration: underline;
         }
-        
+
         .value-icon {
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
-        
+
         .mission-vision {
             display: flex;
             gap: 2rem;
             margin-top: 2rem;
         }
+
         .mv-box {
             flex: 1;
             padding: 2rem;
@@ -46,9 +51,15 @@
             box-shadow: var(--shadow-soft);
             border-top: 4px solid var(--secondary);
         }
-        @media(max-width: 768px) { .mission-vision { flex-direction: column; } }
+
+        @media(max-width: 768px) {
+            .mission-vision {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Header injected by JS -->
@@ -66,14 +77,22 @@
     <section class="section">
         <div class="container grid grid-2" style="align-items: center;">
             <div class="reveal slide-in-left">
-                <h2 class="section-title">Our Journey</h2>
-                <h4 style="color: var(--secondary); margin-bottom: 1rem;">Delivering Excellence Since 2014</h4>
-                <p style="margin-bottom: 1rem;">Founded in 2014, Express Trackers emerged from a clear vision: to redefine logistics by infusing it with unmatched speed, deep personalization, and ironclad reliability.</p>
-                <p style="margin-bottom: 1rem;">Over the years, we have grown from a localized delivery service into a formidable global logistics network. We pride ourselves on offering comprehensive solutions encompassing everything from rapid courier drops to complex customs clearances and massive warehousing strategies.</p>
-                <p>Our professional approach focuses strictly on meeting client deadlines securely, making us the trusted partner for businesses across varying industries.</p>
+                <h2 class="section-title">Who We Are</h2>
+                <h4 style="color: var(--secondary); margin-bottom: 1rem;">Logistics Excellence Since 2015</h4>
+                <p style="margin-bottom: 1rem;">Express Trackers is a professionally managed logistics partner dedicated
+                    to providing the fastest door delivery for all your important international and domestic
+                    consignments. We leverage the power of major industry players to bring world-class services directly
+                    to small and medium corporate houses, ensuring competitive pricing even for smaller volumes.</p>
+                <p style="margin-bottom: 1rem;">To consistently meet the changing needs of modern end-users, we
+                    prioritize highly personalized customer service. Our advanced web-based and SMS tracking systems are
+                    major highlights that keep you continually updated on the precise status of your cargo.</p>
+                <p>Navigating a rapidly transforming economic environment, our forward-looking vision positions us to
+                    strategize robust future growth. We aim to be the catalyst that elevates your supply chain,
+                    fulfilling our aspiration to lead in the upper deck of the global logistics industry.</p>
             </div>
             <div class="reveal slide-in-right img-zoom-container" style="border-radius: var(--radius-lg);">
-                <img src="assets/hero_surface.png" alt="Logistics Fleet" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-hover);">
+                <img src="assets/hero_surface.png" alt="Logistics Fleet"
+                    style="border-radius: var(--radius-lg); box-shadow: var(--shadow-hover);">
             </div>
         </div>
     </section>
@@ -81,15 +100,19 @@
     <!-- Mission & Vision -->
     <section class="section section-bg-white">
         <div class="container text-center reveal fade-up">
-            <h2 class="section-title">Our Purpose</h2>
+            <h2 class="section-title">Our Strategic Focus</h2>
             <div class="mission-vision">
                 <div class="mv-box delay-100">
-                    <h3 style="color: var(--primary);">Our Mission</h3>
-                    <p style="color: var(--text-muted);">To provide exceptionally fast, secure, and cost-effective door-to-door delivery and personalized logistics solutions leveraging modern technology and a dedicated professional team.</p>
+                    <h3 style="color: var(--primary);">Empowering SMBs</h3>
+                    <p style="color: var(--text-muted);">We believe world-class supply chain management shouldn't be
+                        exclusive to giant corporations. Our aim is to provide small and medium enterprises with highly
+                        competitive, premium logistics solutions.</p>
                 </div>
                 <div class="mv-box delay-200">
-                    <h3 style="color: var(--primary);">Our Vision</h3>
-                    <p style="color: var(--text-muted);">To become the globally recognized premier choice for supply chain management by continually innovating our tracking systems and expanding our domestic and international footprint.</p>
+                    <h3 style="color: var(--primary);">Future-Ready Vision</h3>
+                    <p style="color: var(--text-muted);">With new paradigms emerging constantly, our long-term vision
+                        ensures we adapt and grow. We are actively strategizing to remain at the pinnacle of the
+                        transforming logistics sector.</p>
                 </div>
             </div>
         </div>
@@ -105,22 +128,26 @@
                 <div class="card hover-lift reveal fade-up delay-100">
                     <div class="value-icon">🤝</div>
                     <h3>Trust</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Building long-lasting partnerships through absolute transparency and integrity.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Building long-lasting partnerships through
+                        absolute transparency and integrity.</p>
                 </div>
                 <div class="card hover-lift reveal fade-up delay-200">
                     <div class="value-icon">⚡</div>
                     <h3>Speed</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Optimizing transit times to deliver your goods far quicker than the industry standard.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Optimizing transit times to deliver your
+                        goods far quicker than the industry standard.</p>
                 </div>
                 <div class="card hover-lift reveal fade-up delay-300">
                     <div class="value-icon">🛡️</div>
                     <h3>Reliability</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">A zero-compromise approach to the security and pristine condition of your cargo.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">A zero-compromise approach to the security
+                        and pristine condition of your cargo.</p>
                 </div>
                 <div class="card hover-lift reveal fade-up delay-400">
                     <div class="value-icon">⭐</div>
                     <h3>Service</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Providing personalized, 24/7 customer support via web and SMS tracking.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Providing personalized, 24/7 customer
+                        support via web and SMS tracking.</p>
                 </div>
             </div>
         </div>
@@ -131,9 +158,11 @@
         <div class="container text-center reveal fade-up">
             <h2 class="section-title">The Professionals Behind the Wheel</h2>
             <p style="max-width: 800px; margin: 0 auto 2rem; color: var(--text-muted); font-size: 1.1rem;">
-                Behind every delivery is a dedicated team of logistics experts, customs specialists, and skilled operators. 
-                We combine industry expertise with extreme attention to detail, ensuring that whether dealing with 
-                marine insurance paperwork or coordinating air freight timelines, every step is handled by seasoned professionals.
+                Behind every delivery is a dedicated team of logistics experts, customs specialists, and skilled
+                operators.
+                We combine industry expertise with extreme attention to detail, ensuring that whether dealing with
+                marine insurance paperwork or coordinating air freight timelines, every step is handled by seasoned
+                professionals.
             </p>
             <a href="contact.html" class="btn btn-primary">Speak to Our Experts</a>
         </div>
@@ -144,4 +173,5 @@
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
