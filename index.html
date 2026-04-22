@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
             overflow: hidden;
             background-color: var(--text-dark);
         }
+
         .hero-bg {
             position: absolute;
             top: 0;
@@ -23,6 +25,7 @@
             width: 100%;
             height: 100%;
         }
+
         .hero-bg::after {
             content: '';
             position: absolute;
@@ -32,11 +35,13 @@
             height: 100%;
             background: linear-gradient(90deg, rgba(34, 34, 34, 0.9) 0%, rgba(90, 45, 130, 0.6) 50%, rgba(34, 34, 34, 0.2) 100%);
         }
+
         .hero-bg img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .hero-content {
             position: relative;
             z-index: 10;
@@ -45,22 +50,26 @@
             align-items: center;
             color: var(--white);
         }
+
         .hero-content h1 {
             font-size: 4rem;
             color: var(--white);
             margin-bottom: 1.5rem;
             max-width: 800px;
         }
+
         .hero-content p {
             font-size: 1.2rem;
             max-width: 600px;
             margin-bottom: 2rem;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255, 255, 255, 0.9);
         }
+
         .cta-group {
             display: flex;
             gap: 1rem;
         }
+
         /* Slider Controls */
         .slider-controls {
             position: absolute;
@@ -72,6 +81,7 @@
             gap: 15px;
             align-items: center;
         }
+
         .slider-dot {
             width: 12px;
             height: 12px;
@@ -80,10 +90,13 @@
             cursor: pointer;
             transition: var(--transition);
         }
-        .slider-dot.active, .slider-dot:hover {
+
+        .slider-dot.active,
+        .slider-dot:hover {
             background: var(--white);
             transform: scale(1.3);
         }
+
         .slider-nav {
             position: absolute;
             top: 50%;
@@ -95,11 +108,12 @@
             padding: 0 5%;
             pointer-events: none;
         }
+
         .slider-nav button {
             pointer-events: auto;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
             width: 50px;
             height: 50px;
@@ -110,16 +124,19 @@
             justify-content: center;
             transition: var(--transition);
         }
+
         .slider-nav button:hover {
             background: var(--primary);
             border-color: var(--primary);
         }
+
         /* Service Grid Override */
         .service-icon {
             font-size: 2.5rem;
             color: var(--secondary);
             margin-bottom: 1rem;
         }
+
         /* Process Section */
         .process-grid {
             display: grid;
@@ -127,6 +144,7 @@
             gap: 2rem;
             position: relative;
         }
+
         .process-grid::before {
             content: '';
             position: absolute;
@@ -138,12 +156,19 @@
             z-index: 0;
             display: none;
         }
-        @media(min-width: 992px) { .process-grid::before { display: block; } }
+
+        @media(min-width: 992px) {
+            .process-grid::before {
+                display: block;
+            }
+        }
+
         .process-step {
             position: relative;
             z-index: 1;
             text-align: center;
         }
+
         .process-num {
             width: 80px;
             height: 80px;
@@ -160,24 +185,26 @@
             box-shadow: 0 0 0 10px var(--bg-color);
             transition: var(--transition);
         }
+
         .process-step:hover .process-num {
             background: var(--primary);
             color: var(--white);
             transform: scale(1.1);
         }
-        
+
         /* Stats Section */
         .stats-section {
             background: var(--accent-gradient);
             color: var(--white);
             padding: 4rem 0;
         }
+
         .stat-item h3 {
             color: var(--white);
             font-size: 3rem;
             margin-bottom: 0.5rem;
         }
-        
+
         /* Quick Track Bar */
         .quick-track {
             background: var(--white);
@@ -192,23 +219,49 @@
             gap: 1.5rem;
             justify-content: space-between;
         }
-        .quick-track-content { flex: 1; }
-        .quick-track h3 { margin-bottom: 0; font-size: 1.5rem; }
+
+        .quick-track-content {
+            flex: 1;
+        }
+
+        .quick-track h3 {
+            margin-bottom: 0;
+            font-size: 1.5rem;
+        }
+
         .quick-track-form {
             flex: 2;
             display: flex;
             gap: 1rem;
         }
-        .quick-track-form input { margin-bottom: 0; }
-        
+
+        .quick-track-form input {
+            margin-bottom: 0;
+        }
+
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .quick-track { flex-direction: column; transform: translateY(0); margin-top: 2rem; }
-            .quick-track-form { width: 100%; flex-direction: column; }
-            .process-grid { grid-template-columns: 1fr; }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .quick-track {
+                flex-direction: column;
+                transform: translateY(0);
+                margin-top: 2rem;
+            }
+
+            .quick-track-form {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body class="home-page">
 
     <!-- Header injected by JS -->
@@ -223,15 +276,17 @@
             <div class="container hero-content">
                 <div class="hero-text-box">
                     <h1>Fast & Secure Air Cargo Solutions</h1>
-                    <p>Experience unparalleled speed and global reach with our premium air freight services. Trust us to deliver your cargo safely across continents.</p>
+                    <p>Experience unparalleled speed and global reach with our premium air freight services. Trust us to
+                        deliver your cargo safely across continents.</p>
                     <div class="cta-group">
-                        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
-                        <!-- <a href="tracking.html" class="btn btn-outline" style="color:white; border-color:white;">Track Shipment</a> -->
+                        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                        <a href="services.html" class="btn btn-outline" style="color:white; border-color:white;">Our
+                            Services</a>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Slide 2 -->
         <div class="hero-slide">
             <div class="hero-bg">
@@ -240,15 +295,17 @@
             <div class="container hero-content">
                 <div class="hero-text-box">
                     <h1>Efficient Rail Container Transport</h1>
-                    <p>Cost-effective and sustainable bulk transport. Our extensive rail network ensures your goods reach their destination reliably.</p>
+                    <p>Cost-effective and highly sustainable bulk transport options. Our extensive rail network ensures
+                        your goods easily reach their final node reliably.</p>
                     <div class="cta-group">
-                        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
-                        <a href="services.html" class="btn btn-outline" style="color:white; border-color:white;">Our Services</a>
+                        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                        <a href="services.html" class="btn btn-outline" style="color:white; border-color:white;">Our
+                            Services</a>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Slide 3 -->
         <div class="hero-slide">
             <div class="hero-bg">
@@ -257,10 +314,31 @@
             <div class="container hero-content">
                 <div class="hero-text-box">
                     <h1>Reliable Nationwide Road Delivery</h1>
-                    <p>Modern fleets equipped with real-time tracking providing seamless door-to-door delivery across the country.</p>
+                    <p>Modern fleets fully equipped with real-time tracking modules to provide seamless door-to-door
+                        delivery operations anywhere across the country.</p>
                     <div class="cta-group">
-                        <a href="contact.html" class="btn btn-primary">Get a Quote</a>
-                        <a href="about.html" class="btn btn-outline" style="color:white; border-color:white;">Learn More</a>
+                        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                        <a href="services.html" class="btn btn-outline" style="color:white; border-color:white;">Our
+                            Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="hero-slide">
+            <div class="hero-bg">
+                <img src="assets/hero_ocean.png" alt="Ocean Freight Trade">
+            </div>
+            <div class="container hero-content">
+                <div class="hero-text-box">
+                    <h1>Premium Ocean Freight Solutions</h1>
+                    <p>Cost-effective global sea freight forwarding and dynamic logistics. Our modern fleet ensures bulk
+                        maritime shipments arrive precisely on schedule.</p>
+                    <div class="cta-group">
+                        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                        <a href="services.html" class="btn btn-outline" style="color:white; border-color:white;">Our
+                            Services</a>
                     </div>
                 </div>
             </div>
@@ -268,15 +346,20 @@
 
         <div class="slider-nav">
             <button class="slider-prev">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
             </button>
             <button class="slider-next">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
             </button>
         </div>
 
         <div class="slider-controls">
             <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
             <div class="slider-dot"></div>
             <div class="slider-dot"></div>
         </div>
@@ -301,23 +384,28 @@
     <section class="section section-bg-white" id="about">
         <div class="container grid grid-2" style="align-items: center;">
             <div class="reveal slide-in-left">
-                <h2 class="section-title">Global Logistics Excellence Since 2014</h2>
-                <p style="margin-bottom: 1rem; color: var(--text-muted);">At Express Trackers, we understand that modern businesses require fast, flexible, and completely reliable logistics solutions.</p>
-                <p style="margin-bottom: 2rem;">For nearly a decade, we have been at the forefront of providing personalized door delivery, comprehensive warehouse management, and seamless customs clearance. Our commitment is to ensure your supply chain never breaks.</p>
+                <h2 class="section-title">Global Logistics Excellence Since 2015</h2>
+                <p style="margin-bottom: 1rem; color: var(--text-muted);">Since 2015, Express Trackers is a
+                    professionally managed organization providing the fastest door delivery for international and
+                    domestic consignments.</p>
+                <p style="margin-bottom: 2rem;">We bring world-class solutions from major logistics players directly to
+                    small and medium businesses at highly competitive prices. Enjoy personalized customer service and
+                    stay fully informed with our advanced Web and SMS tracking features.</p>
                 <div class="grid grid-2" style="margin-bottom: 2rem; gap: 1rem;">
                     <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Fast Delivery</h4>
-                        <p style="font-size: 0.9rem;">Optimized routes for maximum speed.</p>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Fastest Delivery</h4>
+                        <p style="font-size: 0.9rem;">Express door-to-door solutions.</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Global Reach</h4>
-                        <p style="font-size: 0.9rem;">Domestic and international networks.</p>
+                        <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Live Tracking</h4>
+                        <p style="font-size: 0.9rem;">Web-based and SMS updates.</p>
                     </div>
                 </div>
                 <a href="about.html" class="btn btn-outline">Read More About Us</a>
             </div>
             <div class="reveal slide-in-right img-zoom-container" style="border-radius: var(--radius-lg);">
-                <img src="assets/service_warehouse.png" alt="Warehouse Operations" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-soft);">
+                <img src="assets/service_warehouse.png" alt="Warehouse Operations"
+                    style="border-radius: var(--radius-lg); box-shadow: var(--shadow-soft);">
             </div>
         </div>
     </section>
@@ -326,61 +414,82 @@
     <section class="section" id="services">
         <div class="container text-center">
             <h2 class="section-title reveal fade-up">Comprehensive Services</h2>
-            <p class="section-subtitle reveal fade-up">We offer a wide array of logistics solutions tailored to match the unique demands of your supply chain.</p>
-            
+            <p class="section-subtitle reveal fade-up">We offer a wide array of logistics solutions tailored to match
+                the unique demands of your supply chain.</p>
+
             <div class="grid grid-3">
                 <!-- Service Card 1 -->
                 <div class="card hover-lift reveal fade-up delay-100">
-                    <div class="service-icon">✈️</div>
-                    <h3>Air Freight</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Rapid and secure air cargo transport for time-sensitive, high-value shipments internationally.</p>
-                    <a href="service-detail.html?service=air" style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
+                    <div class="service-icon">🚢</div>
+                    <h3>Ocean Freight</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Reliable global
+                        ocean partnerships ensuring fast, efficient delivery for customized bulk maritime solutions.</p>
+                    <a href="service-detail.html?service=ocean" style="color: var(--secondary); font-weight: 600;">View
+                        Details &rarr;</a>
                 </div>
                 <!-- Service Card 2 -->
                 <div class="card hover-lift reveal fade-up delay-200">
-                    <div class="service-icon">🚆</div>
-                    <h3>Rail Transport</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Cost-effective bulk transportation combining reliability and heavy load capacity.</p>
-                    <a href="service-detail.html?service=rail" style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
+                    <div class="service-icon">✈️</div>
+                    <h3>Air Freight</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Specialized
+                        international air transport engineered for maximum speed, safety, and cost-effective delivery.
+                    </p>
+                    <a href="service-detail.html?service=air" style="color: var(--secondary); font-weight: 600;">View
+                        Details &rarr;</a>
                 </div>
                 <!-- Service Card 3 -->
                 <div class="card hover-lift reveal fade-up delay-300">
-                    <div class="service-icon">🚚</div>
-                    <h3>Road Transportation</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Versatile fleet covering nationwide routes to provide seamless door-to-door delivery.</p>
-                    <a href="service-detail.html?service=road" style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
+                    <div class="service-icon">🛡️</div>
+                    <h3>Custom Clearance</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Automated clearance
+                        and flawless documentation handling designed to eliminate border delays seamlessly for SMBs.</p>
+                    <a href="service-detail.html?service=customs"
+                        style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
                 </div>
                 <!-- Service Card 4 -->
                 <div class="card hover-lift reveal fade-up delay-100">
                     <div class="service-icon">📦</div>
                     <h3>Courier & Cargo</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Express domestic and international courier services for small parcels and documents.</p>
-                    <a href="service-detail.html?service=courier" style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Highly reliable,
+                        fast-transit express delivery for crucial documents and parcels across domestic and global
+                        zones.</p>
+                    <a href="service-detail.html?service=courier"
+                        style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
                 </div>
                 <!-- Service Card 5 -->
                 <div class="card hover-lift reveal fade-up delay-200">
-                    <div class="service-icon">🏭</div>
-                    <h3>Warehousing</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">State-of-the-art storage facilities with advanced inventory management systems.</p>
-                    <a href="service-detail.html?service=warehousing" style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
+                    <div class="service-icon">🚚</div>
+                    <h3>Road Transportation</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Powered by our
+                        <strong style="color: var(--primary);">Dhruv
+                            Transport</strong> division, providing personalized, competitive door-to-door transit using
+                        our dedicated
+                        fleet.</p>
+                    <a href="service-detail.html?service=road" style="color: var(--secondary); font-weight: 600;">View
+                        Details &rarr;</a>
                 </div>
                 <!-- Service Card 6 -->
                 <div class="card hover-lift reveal fade-up delay-300">
-                    <div class="service-icon">🛡️</div>
-                    <h3>Custom Clearance</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Expert handling of complex documentation and regulatory compliance at borders.</p>
-                    <a href="service-detail.html?service=customs" style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
+                    <div class="service-icon">🏭</div>
+                    <h3>Warehousing</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">State-of-the-art
+                        secure storage equipped with climate control, advanced tracking, and efficiency-maximizing
+                        cross-docking.</p>
+                    <a href="service-detail.html?service=warehousing"
+                        style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
                 </div>
-                
                 <!-- Service Card 7 -->
                 <div class="card hover-lift reveal fade-up delay-100">
                     <div class="service-icon">⚓</div>
                     <h3>Marine Cargo Insurance</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Comprehensive coverage protecting your shipments against physical loss or damage.</p>
-                    <a href="service-detail.html?service=insurance" style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">Comprehensive
+                        seaborne transit coverage providing complete peace of mind and protection tailored to your
+                        budget.</p>
+                    <a href="service-detail.html?service=insurance"
+                        style="color: var(--secondary); font-weight: 600;">View Details &rarr;</a>
                 </div>
             </div>
-            
+
             <div class="reveal fade-up" style="margin-top: 3rem;">
                 <a href="services.html" class="btn btn-primary">See All Services</a>
             </div>
@@ -395,15 +504,15 @@
                 <p>Years of Experience</p>
             </div>
             <div class="stat-item reveal fade-up delay-200">
-                <h3>5M+</h3>
+                <h3>15,000+</h3>
                 <p>Parcels Delivered</p>
             </div>
             <div class="stat-item reveal fade-up delay-300">
-                <h3>150+</h3>
-                <p>Global Partners</p>
+                <h3>26+</h3>
+                <p>Active Clients</p>
             </div>
             <div class="stat-item reveal fade-up delay-400">
-                <h3>99%</h3>
+                <h3>98%</h3>
                 <p>Client Satisfaction</p>
             </div>
         </div>
@@ -413,28 +522,96 @@
     <section class="section section-bg-white" id="process">
         <div class="container text-center">
             <h2 class="section-title reveal fade-up">How We Work</h2>
-            <p class="section-subtitle reveal fade-up">Our streamlined 4-step process guarantees efficiency and transparency from pickup to final delivery.</p>
-            
+            <p class="section-subtitle reveal fade-up">Our streamlined 4-step process guarantees efficiency and
+                transparency from pickup to final delivery.</p>
+
             <div class="process-grid">
                 <div class="process-step reveal fade-up delay-100">
                     <div class="process-num">1</div>
                     <h4 style="margin-bottom: 0.5rem;">Inquiry</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Submit your requirements and get an instant, custom quote.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Submit your requirements and get an instant,
+                        custom quote.</p>
                 </div>
                 <div class="process-step reveal fade-up delay-200">
                     <div class="process-num">2</div>
                     <h4 style="margin-bottom: 0.5rem;">Planning</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">We design the optimal route and mode of transport for your cargo.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">We design the optimal route and mode of
+                        transport for your cargo.</p>
                 </div>
                 <div class="process-step reveal fade-up delay-300">
                     <div class="process-num">3</div>
                     <h4 style="margin-bottom: 0.5rem;">Shipping</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Your package is dispatched with real-time web & SMS tracking.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Your package is dispatched with real-time
+                        web & SMS tracking.</p>
                 </div>
                 <div class="process-step reveal fade-up delay-400">
                     <div class="process-num">4</div>
                     <h4 style="margin-bottom: 0.5rem;">Delivery</h4>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Safe and on-time door delivery with proof of receipt.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Safe and on-time door delivery with proof of
+                        receipt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-bg-light" id="testimonials" style="background: rgba(142, 107, 191, 0.05);">
+        <div class="container text-center">
+            <h2 class="section-title reveal fade-up">What Our Clients Say</h2>
+            <p class="section-subtitle reveal fade-up">Trusted by leading businesses worldwide to manage their entire
+                logistics operations.</p>
+
+            <div class="grid grid-3" style="margin-top: 3rem;">
+                <div class="card hover-lift reveal fade-up delay-100" style="text-align: left;">
+                    <div style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic;">
+                        "Express Trackers handled our bulk consignment with perfect precision. The custom clearance was
+                        completely seamless, a huge relief for our business."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div
+                            style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">
+                            AB</div>
+                        <div>
+                            <h4 style="margin: 0; font-size: 1rem; color: var(--text-dark);">Amitabh B.</h4>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Supply Chain Manager</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hover-lift reveal fade-up delay-200" style="text-align: left;">
+                    <div style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic;">
+                        "Since we started using their <strong style="color: var(--primary);">Dhruv Transport</strong>
+                        fleet for all India road deliveries, we've cut our lead times by over 20%. Seriously impressive
+                        service!"
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div
+                            style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">
+                            RD</div>
+                        <div>
+                            <h4 style="margin: 0; font-size: 1rem; color: var(--text-dark);">Rahul D.</h4>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Operations Director</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card hover-lift reveal fade-up delay-300" style="text-align: left;">
+                    <div style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">⭐⭐⭐⭐⭐</div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; font-style: italic;">
+                        "We totally depend on their warehousing and air freight to meet our tight retail deadlines. They
+                        never miss a schedule. Simply the best logistics partner."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div
+                            style="width: 50px; height: 50px; border-radius: 50%; background: var(--bg-color); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">
+                            SK</div>
+                        <div>
+                            <h4 style="margin: 0; font-size: 1rem; color: var(--text-dark);">Sneha K.</h4>
+                            <span style="font-size: 0.8rem; color: var(--text-muted);">Retail Entrepreneur</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -445,7 +622,8 @@
         <div class="container text-center reveal fade-up">
             <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Get Your Shipment Moving Today</h2>
             <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">
-                Partner with Express Trackers and experience logistics operations where reliability meets state-of-the-art speed. Let's grow your business worldwide.
+                Partner with Express Trackers and experience logistics operations where reliability meets
+                state-of-the-art speed. Let's grow your business worldwide.
             </p>
             <div class="cta-group" style="justify-content: center;">
                 <a href="contact.html" class="btn btn-primary">Contact Us Now</a>
@@ -460,4 +638,5 @@
     <script src="js/slider.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

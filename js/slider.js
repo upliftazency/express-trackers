@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
     const slideCount = slides.length;
     let slideInterval;
-    const intervalTime = 4000; // 4 seconds instead of 3 for better readability
+    const intervalTime = 2000; // 2 seconds delay
 
     function initSlider() {
         // Show first slide
