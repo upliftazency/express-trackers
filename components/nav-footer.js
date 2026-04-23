@@ -4,14 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inject Header
     const headerHTML = `
         <div class="nav-container container">
-            <a href="index.html" class="logo">
-                <!-- SVG Icon for Logistics -->
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2 17L12 22L22 17" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2 12L12 17L22 12" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Express Trackers
+            <a href="/" class="logo">
+                <img src="assets/logo.png" alt="Express Trackers Logo" style="height: 60px;">
             </a>
             <div class="mobile-menu-btn" id="mobileMenuBtn">
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -21,12 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 </svg>
             </div>
             <nav class="nav-links" id="navLinks">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <!-- <a href="tracking.html">Track Shipment</a> -->
-                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                <a href="/">Home</a>
+                <a href="about">About Us</a>
+                <a href="services">Services</a>
+                <!-- <a href="tracking">Track Shipment</a> -->
+                <a href="contact" class="btn btn-primary mobile-only-btn">Contact Us</a>
             </nav>
+            <div class="nav-actions">
+                <a href="contact" class="btn btn-primary">Contact Us</a>
+            </div>
         </div>
     `;
 
@@ -34,8 +31,33 @@ document.addEventListener('DOMContentLoaded', () => {
     header.innerHTML = headerHTML;
     document.body.prepend(header);
 
+    // Mobile Menu Toggle
+    const mobileBtn = header.querySelector('#mobileMenuBtn');
+    const navLinks = header.querySelector('#navLinks');
+    if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                mobileBtn.innerHTML = `
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                `;
+            } else {
+                mobileBtn.innerHTML = `
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                `;
+            }
+        });
+    }
+
     // Set Active Link
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = window.location.pathname.split('/').pop() || '/';
     const links = header.querySelectorAll('.nav-links a');
     links.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
@@ -47,10 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const footerHTML = `
         <div class="container footer-grid">
             <div class="footer-col">
-                <div class="logo" style="color: white; margin-bottom: 1rem;">
-                    Express Trackers
+                <div class="logo" style="margin-bottom: 1rem;">
+                    <img src="assets/logo.png" alt="Express Trackers Logo" style="height: 75px; background: white; padding: 5px; border-radius: 4px;">
                 </div>
-                <p>Since 2015, we have provided fast door delivery, personalized logistics solutions, and reliable domestic & international shipping.</p>
+                <p>Since 2014, we have provided fast door delivery, personalized logistics solutions, and reliable domestic & international shipping.</p>
                 <div class="social-links" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
                     <p style="font-size: 0.95rem; font-weight: 500; margin-bottom: 0.2rem;">Connect with us:</p>
                     <div style="display: flex; gap: 1rem;">
@@ -64,22 +86,22 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <!-- <li><a href="tracking.html">Track Shipment</a></li> -->
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <!-- <li><a href="tracking">Track Shipment</a></li> -->
+                    <li><a href="contact">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Our Services</h4>
                 <ul class="footer-links">
-                    <li><a href="services.html">Ocean Freight</a></li>
-                    <li><a href="services.html">Air Freight</a></li>
-                    <li><a href="services.html">Custom Clearance</a></li>
-                    <li><a href="services.html">Courier & Cargo</a></li>
-                    <li><a href="services.html">Road Transportation</a></li>
-                    <li><a href="services.html">Warehousing</a></li>
-                    <li><a href="services.html">Marine Cargo Insurance</a></li>
+                    <li><a href="services">Ocean Freight</a></li>
+                    <li><a href="services">Air Freight</a></li>
+                    <li><a href="services">Custom Clearance</a></li>
+                    <li><a href="services">Courier & Cargo</a></li>
+                    <li><a href="services">Road Transportation</a></li>
+                    <li><a href="services">Warehousing</a></li>
+                    <li><a href="services">Marine Cargo Insurance</a></li>
                 </ul>
             </div>
             <div class="footer-col">
