@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerHTML = `
         <div class="nav-container container">
             <a href="/" class="logo">
-                <img src="assets/logo.png" alt="Express Trackers Logo" style="height: 60px;">
+                <img src="assets/logo.webp" alt="Express Trackers Logo" style="height: 60px;">
             </a>
             <div class="mobile-menu-btn" id="mobileMenuBtn">
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="container footer-grid">
             <div class="footer-col">
                 <div class="logo" style="margin-bottom: 1rem;">
-                    <img src="assets/logo.png" alt="Express Trackers Logo" style="height: 75px; background: white; padding: 5px; border-radius: 4px;">
+                    <img src="assets/logo.webp" alt="Express Trackers Logo" style="height: 75px; background: white; padding: 5px; border-radius: 4px;">
                 </div>
                 <p>Since 2014, we have provided fast door delivery, personalized logistics solutions, and reliable domestic & international shipping.</p>
                 <div class="social-links" style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">

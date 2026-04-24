@@ -26,6 +26,7 @@
             margin-top: -40px;
             position: relative;
             z-index: 10;
+            gap: var(--spacing-lg);
         }
 
         .contact-info {
@@ -91,8 +92,23 @@
             font-weight: 600;
             font-size: 1.2rem;
         }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                padding: 1.5rem;
+            }
+            .contact-form-box { /* Or wherever the form is styled */
+                padding: 1.5rem;
+            }
+            .contact-form.card { /* Based on HTML structure */
+                padding: 1.5rem;
+            }
+        }
     </style>
     <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <script src="components/nav-footer.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -174,8 +190,5 @@
     </section>
 
     <!-- Scripts -->
-    <script src="components/nav-footer.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/main.js"></script>
 </body>
 </html>

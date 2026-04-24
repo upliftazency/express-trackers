@@ -181,6 +181,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startTestSlide();
 
+        const testPrevBtn = document.getElementById('testPrevBtn');
+        const testNextBtn = document.getElementById('testNextBtn');
+
+        if (testPrevBtn) {
+            testPrevBtn.addEventListener('click', () => {
+                goTestSlide(currentTestSlide - 1);
+                stopTestSlide(); startTestSlide();
+            });
+        }
+        if (testNextBtn) {
+            testNextBtn.addEventListener('click', () => {
+                goTestSlide(currentTestSlide + 1);
+                stopTestSlide(); startTestSlide();
+            });
+        }
+
         // Swipe for testimonials
         let tstartX = 0;
         let tendX = 0;
