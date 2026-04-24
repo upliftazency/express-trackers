@@ -58,6 +58,7 @@
             font-size: 4rem;
             color: var(--white);
             margin-bottom: 1.5rem;
+            padding-top: 80px;
             max-width: 800px;
         }
 
@@ -71,6 +72,8 @@
         .cta-group {
             display: flex;
             gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         /* Slider Controls */
@@ -261,9 +264,34 @@
             .process-grid {
                 grid-template-columns: 1fr;
             }
+
+            header {
+                background: var(--white) !important;
+                box-shadow: var(--shadow-soft) !important;
+            }
+
+            .slider-nav {
+                display: none !important;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cta-group .btn {
+                width: 100%;
+                padding: 14px 20px;
+                font-size: 1rem;
+            }
         }
     </style>
     <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <script src="components/nav-footer.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <link rel="preload" as="image" href="assets/hero_air.webp" type="image/webp">
 </head>
 
 <body class="home-page">
@@ -275,7 +303,7 @@
         <!-- Slide 1 -->
         <div class="hero-slide active">
             <div class="hero-bg">
-                <img src="assets/hero_air.png" alt="Air Freight Cargo">
+                <img src="assets/hero_air.webp" alt="Air Freight Cargo">
             </div>
             <div class="container hero-content">
                 <div class="hero-text-box">
@@ -294,7 +322,7 @@
         <!-- Slide 2 -->
         <div class="hero-slide">
             <div class="hero-bg">
-                <img src="assets/hero_rail.png" alt="Rail Transport Container Train">
+                <img src="assets/hero_rail.webp" alt="Rail Transport Container Train">
             </div>
             <div class="container hero-content">
                 <div class="hero-text-box">
@@ -313,7 +341,7 @@
         <!-- Slide 3 -->
         <div class="hero-slide">
             <div class="hero-bg">
-                <img src="assets/hero_surface.png" alt="Fleet of Trucks">
+                <img src="assets/hero_surface.webp" alt="Fleet of Trucks">
             </div>
             <div class="container hero-content">
                 <div class="hero-text-box">
@@ -332,7 +360,7 @@
         <!-- Slide 4 -->
         <div class="hero-slide">
             <div class="hero-bg">
-                <img src="assets/hero_ocean.png" alt="Ocean Freight Trade">
+                <img src="assets/hero_ocean.webp" alt="Ocean Freight Trade">
             </div>
             <div class="container hero-content">
                 <div class="hero-text-box">
@@ -408,8 +436,8 @@
                 <a href="about" class="btn btn-outline">Read More About Us</a>
             </div>
             <div class="reveal slide-in-right img-zoom-container" style="border-radius: var(--radius-lg);">
-                <img src="assets/service_warehouse.png" alt="Warehouse Operations"
-                    style="border-radius: var(--radius-lg); box-shadow: var(--shadow-soft);">
+                <img src="assets/service_warehouse.webp" alt="Warehouse Operations"
+                    style="border-radius: var(--radius-lg); box-shadow: var(--shadow-soft);" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -566,7 +594,9 @@
             <p class="section-subtitle reveal fade-up">Trusted by leading businesses worldwide to manage their entire
                 logistics operations.</p>
 
-            <div class="testimonial-slider-container">
+            <div class="testimonial-slider-container" style="position: relative;">
+
+
                 <div class="testimonial-track" id="testimonialTrack">
                     <div class="testimonial-slide card hover-lift" style="text-align: left;">
                         <div style="color: var(--secondary); margin-bottom: 1rem; font-size: 1.2rem;">⭐⭐⭐⭐⭐</div>
@@ -636,6 +666,12 @@
                     <!-- Dots -->
                 </div>
             </div>
+
+            <!-- Slider Controls -->
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+                <button id="testPrevBtn" aria-label="Previous Testimonial" style="background: var(--white); border: 1px solid #eee; width: 45px; height: 45px; border-radius: 50%; box-shadow: var(--shadow-hover); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; transition: 0.3s ease;">&#10094;</button>
+                <button id="testNextBtn" aria-label="Next Testimonial" style="background: var(--white); border: 1px solid #eee; width: 45px; height: 45px; border-radius: 50%; box-shadow: var(--shadow-hover); cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; transition: 0.3s ease;">&#10095;</button>
+            </div>
         </div>
     </section>
 
@@ -655,10 +691,6 @@
     </section>
 
     <!-- Scripts -->
-    <script src="components/nav-footer.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/main.js"></script>
 </body>
 
 </html>

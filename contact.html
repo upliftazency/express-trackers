@@ -26,6 +26,7 @@
             margin-top: -40px;
             position: relative;
             z-index: 10;
+            gap: var(--spacing-lg);
         }
 
         .contact-info {
@@ -91,8 +92,26 @@
             font-weight: 600;
             font-size: 1.2rem;
         }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                padding: 1.5rem;
+            }
+            .contact-form-box { /* Or wherever the form is styled */
+                padding: 1.5rem;
+            }
+            .contact-form.card { /* Based on HTML structure */
+                padding: 1.5rem;
+            }
+            .connect-section {
+                text-align: center;
+            }
+        }
     </style>
     <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <script src="components/nav-footer.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -137,10 +156,10 @@
                     </div>
                 </div>
 
-                <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #eee;">
+                <div class="connect-section" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #eee;">
                     <h4 style="margin-bottom: 0.5rem;">Connect With Us</h4>
                     <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Join our network and stay closely updated on our professional journey.</p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
                         <a href="https://wa.me/919321759269" target="_blank" style="color: var(--white); background: #25D366; padding: 5px 12px; border-radius: var(--radius-sm); font-size: 0.9rem;">WhatsApp</a>
                         <a href="https://in.linkedin.com/in/amol-vishwasrao-b343597a" target="_blank" style="color: var(--white); background: var(--primary); padding: 5px 12px; border-radius: var(--radius-sm); font-size: 0.9rem;">LinkedIn</a>
                         <a href="https://www.facebook.com/share/1MGox6zQ5x/" target="_blank" style="color: var(--white); background: #1877F2; padding: 5px 12px; border-radius: var(--radius-sm); font-size: 0.9rem;">Facebook</a>
@@ -174,8 +193,5 @@
     </section>
 
     <!-- Scripts -->
-    <script src="components/nav-footer.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/main.js"></script>
 </body>
 </html>
