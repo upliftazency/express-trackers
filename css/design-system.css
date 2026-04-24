@@ -53,6 +53,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   margin-bottom: var(--spacing-md);
   color: var(--primary);
+  word-break: break-word;
 }
 
 a {
@@ -323,6 +324,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
   .nav-links {
     position: fixed;
     top: 80px;

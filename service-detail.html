@@ -68,6 +68,7 @@
             align-items: center;
             justify-content: center;
             font-size: 12px;
+            flex-shrink: 0;
         }
 
         .sidebar-card {
@@ -80,6 +81,16 @@
         @media (max-width: 992px) {
             .detail-content {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .detail-content {
+                padding: 1rem;
+                gap: 1.5rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
         }
     </style>
